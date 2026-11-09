@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Maya's Bakery offers fresh bread, cakes and pastries in Cape Town."
+    >
+    <title>Menu | Maya's Bakery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="Maya's Bakery home">
+          Maya's <span>Bakery</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-links"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="primary-links">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="about.html" data-page="about.html">About</a>
+          <a class="current" aria-current="page" href="products.html" data-page="products.html">Menu</a>
+          <a href="enquiry.html" data-page="enquiry.html">Custom Cakes</a>
+          <a href="contact.html" data-page="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Our menu</p>
+          <h1>Fresh favourites, baked for you.</h1>
+          <p>Browse a selection of bakery favourites. Prices are sample coursework prices.</p>
+        </div>
+      </section>
+
+      <section class="section container">
+        <div class="menu-tools">
+          <label class="search-label" for="product-search">Search the menu</label>
+          <input
+            id="product-search"
+            class="search-input"
+            type="search"
+            placeholder="Try bread, cake or muffin"
+          >
+          <p id="result-count" class="result-count" aria-live="polite">
+            Showing all 6 products
+          </p>
+        </div>
+
+        <div class="filter-row" aria-label="Filter products">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">
+            All items
+          </button>
+          <button class="filter-button" type="button" data-filter="bread" aria-pressed="false">
+            Bread
+          </button>
+          <button class="filter-button" type="button" data-filter="cakes" aria-pressed="false">
+            Cakes
+          </button>
+          <button class="filter-button" type="button" data-filter="pastries" aria-pressed="false">
+            Pastries
+          </button>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+          <article class="product-card" data-category="bread" data-name="classic loaf">
+            <img
+              src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+              alt="Classic freshly baked loaf"
+              loading="lazy"
+            >
+            <div class="product-content">
+              <h2>Classic loaf</h2>
+              <p>Freshly baked white loaf.</p>
+              <strong>R25</strong>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="cakes" data-name="chocolate celebration cake">
+            <img
+              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+              alt="Chocolate celebration cake"
+              loading="lazy"
+            >
+            <div class="product-content">
+              <h2>Chocolate celebration cake</h2>
+              <p>Rich chocolate sponge with creamy frosting.</p>
+              <strong>R350</strong>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="pastries" data-name="butter croissant">
+            <img
+              src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"
+              alt="Golden butter croissant"
+              loading="lazy"
+            >
+            <div class="product-content">
+              <h2>Butter croissant</h2>
+              <p>Golden, flaky and buttery.</p>
+              <strong>R20</strong>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="cakes" data-name="vanilla cupcake">
+            <img
+              src="https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=85"
+              alt="Vanilla cupcake with frosting"
+              loading="lazy"
+            >
+            <div class="product-content">
+              <h2>Vanilla cupcake</h2>
+              <p>Soft vanilla cake with pink frosting.</p>
+              <strong>R22</strong>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="pastries" data-name="blueberry muffin">
+            <img
+              src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=900&q=85"
+              alt="Blueberry muffin"
+              loading="lazy"
+            >
+            <div class="product-content">
+              <h2>Blueberry muffin</h2>
+              <p>Moist muffin with blueberries.</p>
+              <strong>R28</strong>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="pastries" data-name="fruit tart">
+            <img
+              src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=85"
+              alt="Fruit tart with seasonal fruit"
+              loading="lazy"
+            >
+            <div class="product-content">
+              <h2>Fruit tart</h2>
+              <p>Seasonal fruit and smooth cream.</p>
+              <strong>R45</strong>
+            </div>
+          </article>
+        </div>
+
+        <p id="no-products" class="empty-state" hidden>
+          No products match your search. Try another word or category.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand brand-light" href="index.html">Maya's <span>Bakery</span></a>
+          <p>Freshly baked goods for everyday moments.</p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Opening hours</h2>
+          <p>
+            Monday–Saturday: 07:00–18:00<br>
+            Sunday: 08:00–14:00
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Get in touch</h2>
+          <p>
+            012 345 6789<br>
+            <a href="mailto:hello@mayasbakery.co.za">hello@mayasbakery.co.za</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 Maya's Bakery. Coursework demonstration website.</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

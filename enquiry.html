@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Maya's Bakery offers fresh bread, cakes and pastries in Cape Town."
+    >
+    <title>Custom cake enquiry | Maya's Bakery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="index.html" aria-label="Maya's Bakery home">
+          Maya's <span>Bakery</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-links"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav-links" id="primary-links">
+          <a href="index.html" data-page="index.html">Home</a>
+          <a href="about.html" data-page="about.html">About</a>
+          <a href="products.html" data-page="products.html">Menu</a>
+          <a class="current" aria-current="page" href="enquiry.html" data-page="enquiry.html">Custom Cakes</a>
+          <a href="contact.html" data-page="contact.html">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Custom cakes</p>
+          <h1>Let's create something special.</h1>
+          <p>Tell us about your celebration and the cake you have in mind.</p>
+        </div>
+      </section>
+
+      <section class="section container form-layout">
+        <div>
+          <p class="eyebrow">Your celebration</p>
+          <h2>A cake made for your moment.</h2>
+          <p>
+            Complete the enquiry form with as much detail as possible. This demonstration
+            form validates your details in the browser; it does not send or store an order.
+          </p>
+
+          <div class="info-card">
+            <h3>Helpful details</h3>
+            <p>
+              Include the event date, number of servings, preferred flavour, colours and
+              any message you would like on the cake.
+            </p>
+          </div>
+        </div>
+
+        <form class="form-card" data-demo-form>
+          <div class="form-heading">
+            <h2>Custom cake enquiry</h2>
+            <p>Fields marked * are required.</p>
+          </div>
+
+          <div class="field">
+            <label for="cake-name">Full name *</label>
+            <input id="cake-name" name="name" type="text" autocomplete="name" required minlength="2">
+          </div>
+
+          <div class="field">
+            <label for="cake-email">Email address *</label>
+            <input id="cake-email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="event-date">Event date *</label>
+            <input id="event-date" name="event-date" type="date" required>
+          </div>
+
+          <div class="field">
+            <label for="servings">Number of servings</label>
+            <input id="servings" name="servings" type="number" min="1" max="500" placeholder="e.g. 20">
+          </div>
+
+          <div class="field">
+            <label for="cake-details">Cake details *</label>
+            <textarea
+              id="cake-details"
+              name="details"
+              rows="5"
+              placeholder="Theme, flavour, colours and message..."
+              required
+              minlength="10"
+            ></textarea>
+          </div>
+
+          <button class="button button-primary" type="submit">Submit enquiry</button>
+          <p class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand brand-light" href="index.html">Maya's <span>Bakery</span></a>
+          <p>Freshly baked goods for everyday moments.</p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Opening hours</h2>
+          <p>
+            Monday–Saturday: 07:00–18:00<br>
+            Sunday: 08:00–14:00
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Get in touch</h2>
+          <p>
+            012 345 6789<br>
+            <a href="mailto:hello@mayasbakery.co.za">hello@mayasbakery.co.za</a>
+          </p>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 Maya's Bakery. Coursework demonstration website.</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
