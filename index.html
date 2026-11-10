@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Maya's Bakery offers fresh bread, cakes and pastries in Cape Town."
+      content="Discover Maya's Bakery in Cape Town: fresh bread, celebration cakes and pastries baked with care for everyday moments."
     >
     <title>Home | Maya's Bakery</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Maya's Bakery | Freshly baked every day">
+    <meta property="og:description" content="Fresh bread, beautiful cakes and delicious pastries made with care for our local community.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Maya's Bakery | Freshly baked every day">
+    <meta name="twitter:description" content="Fresh bread, beautiful cakes and delicious pastries made with care for our local community.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="css/style.css">
@@ -102,9 +108,12 @@
           <div class="card-grid">
             <article class="food-card">
               <img
-                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+                src="assets/artisan-bread.webp"
                 alt="Freshly baked artisan bread"
+                width="800"
+                height="600"
                 loading="lazy"
+                decoding="async"
               >
               <div class="food-card-content">
                 <h3>Fresh bread</h3>
@@ -115,9 +124,12 @@
 
             <article class="food-card">
               <img
-                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+                src="assets/chocolate-celebration-cake.webp"
                 alt="Decorated celebration cake"
+                width="800"
+                height="600"
                 loading="lazy"
+                decoding="async"
               >
               <div class="food-card-content">
                 <h3>Celebration cakes</h3>
@@ -128,9 +140,12 @@
 
             <article class="food-card">
               <img
-                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"
+                src="assets/butter-croissant.webp"
                 alt="Golden flaky pastries"
+                width="800"
+                height="600"
                 loading="lazy"
+                decoding="async"
               >
               <div class="food-card-content">
                 <h3>Pastries</h3>
@@ -149,6 +164,77 @@
           <p>Share your idea and we will discuss availability and a quote.</p>
         </div>
         <a class="button button-primary" href="enquiry.html">Make an enquiry</a>
+      </section>
+
+      <section class="section section-cream" aria-labelledby="faq-heading">
+        <div class="container faq-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Need to know</p>
+              <h2 id="faq-heading">Frequently asked questions</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>
+                <button
+                  class="faq-question"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-prices"
+                >
+                  Are the menu prices final?
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-answer-prices" hidden>
+                <p>The prices shown on this website are sample coursework prices, not a confirmed price list.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <h3>
+                <button
+                  class="faq-question"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-cakes"
+                >
+                  How can I enquire about a custom cake?
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-answer-cakes" hidden>
+                <p>
+                  Use the <a href="enquiry.html">custom cake enquiry form</a> to share your event date,
+                  serving size and ideas. The form is a coursework demonstration and does not send or store
+                  your details.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <h3>
+                <button
+                  class="faq-question"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-allergens"
+                >
+                  Where can I ask about ingredients or allergens?
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-answer-allergens" hidden>
+                <p>
+                  Please use the <a href="contact.html">contact page</a> to ask about ingredients or allergens
+                  before choosing a product. This demonstration website cannot confirm product ingredients.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
 

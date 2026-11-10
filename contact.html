@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Maya's Bakery offers fresh bread, cakes and pastries in Cape Town."
+      content="Find Maya's Bakery contact details, opening hours and a Cape Town map, or send a message through our sample contact form."
     >
     <title>Contact | Maya's Bakery</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Maya's Bakery">
+    <meta property="og:description" content="Find our contact details and opening hours, or send Maya's Bakery a message using our sample form.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact Maya's Bakery">
+    <meta name="twitter:description" content="Find our contact details and opening hours, or send Maya's Bakery a message using our sample form.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="css/style.css">
@@ -97,17 +103,17 @@
 
           <div class="field">
             <label for="contact-name">Name *</label>
-            <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2">
+            <input id="contact-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100">
           </div>
 
           <div class="field">
             <label for="contact-email">Email address *</label>
-            <input id="contact-email" name="email" type="email" autocomplete="email" required>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254">
           </div>
 
           <div class="field">
             <label for="contact-message">Message *</label>
-            <textarea id="contact-message" name="message" rows="6" required minlength="10"></textarea>
+            <textarea id="contact-message" name="message" rows="6" required minlength="10" maxlength="2000"></textarea>
           </div>
 
           <button class="button button-primary" type="submit">Send message</button>

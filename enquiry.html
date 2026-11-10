@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Maya's Bakery offers fresh bread, cakes and pastries in Cape Town."
+      content="Tell Maya's Bakery about your celebration cake, preferred flavour, servings and event date using our sample enquiry form."
     >
     <title>Custom cake enquiry | Maya's Bakery</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Custom cake enquiry | Maya's Bakery">
+    <meta property="og:description" content="Share your event date, serving size and cake ideas with Maya's Bakery using our sample enquiry form.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Custom cake enquiry | Maya's Bakery">
+    <meta name="twitter:description" content="Share your event date, serving size and cake ideas with Maya's Bakery using our sample enquiry form.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     >
     <link rel="stylesheet" href="css/style.css">
@@ -82,12 +88,12 @@
 
           <div class="field">
             <label for="cake-name">Full name *</label>
-            <input id="cake-name" name="name" type="text" autocomplete="name" required minlength="2">
+            <input id="cake-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100">
           </div>
 
           <div class="field">
             <label for="cake-email">Email address *</label>
-            <input id="cake-email" name="email" type="email" autocomplete="email" required>
+            <input id="cake-email" name="email" type="email" autocomplete="email" required maxlength="254">
           </div>
 
           <div class="field">
@@ -109,6 +115,7 @@
               placeholder="Theme, flavour, colours and message..."
               required
               minlength="10"
+              maxlength="2000"
             ></textarea>
           </div>
 
