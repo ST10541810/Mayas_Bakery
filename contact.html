@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <form class="form-card" data-demo-form>
+        <form class="form-card" id="contactForm" action="#" method="POST">
           <div class="form-heading">
             <h2>Send us a message</h2>
             <p>Fields marked * are required.</p>
@@ -109,6 +109,17 @@
           <div class="field">
             <label for="contact-email">Email address *</label>
             <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254">
+          </div>
+
+          <div class="field">
+            <label for="messageType">Message Type *</label>
+            <select id="messageType" name="messageType" required>
+              <option value="">Select a message type</option>
+              <option value="General Enquiry">General Enquiry</option>
+              <option value="Order">Order</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Complaint">Complaint</option>
+            </select>
           </div>
 
           <div class="field">

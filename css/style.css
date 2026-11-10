@@ -616,6 +616,7 @@ p {
 
 .field input,
 .field textarea,
+.field select,
 .search-input {
   width: 100%;
   min-height: 46px;
@@ -633,6 +634,7 @@ p {
 
 .field input:focus,
 .field textarea:focus,
+.field select:focus,
 .search-input:focus {
   border-color: var(--color-rose);
   outline: 2px solid rgb(166 79 66 / 18%);

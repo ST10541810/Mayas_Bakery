@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll("[data-demo-form]").forEach((form) => {
+  document.querySelectorAll("[data-demo-form], #contactForm").forEach((form) => {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = form.querySelector(".form-message");
       if (message) {
         message.textContent =
-          "Thank you! This demonstration form does not send or store your details.";
+          "Thank you! Your message has been validated successfully. No details have been sent or stored.";
       }
 
       form.reset();
