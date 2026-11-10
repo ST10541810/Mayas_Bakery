@@ -15,3 +15,17 @@ This log records the changes included in this revised project package. Dates des
 
 ## Original submission
 The original project files were supplied as a ZIP archive. The exact dates and sequence of earlier changes have not been reconstructed. Refer to the Git repository history for the commits that existed before this revision.
+## Part 3 – Improvements
+
+- Improved website structure and navigation.
+- Added responsive styling for different screen sizes.
+- Improved JavaScript functionality.
+- Added form validation.
+- Improved accessibility and user experience.
+- Updated project documentation.
+
+## Part 2 Feedback
+
+- Improved the website based on the feedback received.
+- Refined the layout and presentation.
+- Improved navigation and usability.
