@@ -3,25 +3,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const navigation = document.querySelector("#primary-links");
 
   if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isExpanded));
+    const setMenuOpen = (isOpen) => {
+      menuButton.setAttribute("aria-expanded", String(isOpen));
       menuButton.setAttribute(
         "aria-label",
-        isExpanded ? "Open navigation menu" : "Close navigation menu"
+        isOpen ? "Close navigation menu" : "Open navigation menu"
       );
-      navigation.classList.toggle("is-open", !isExpanded);
+      navigation.classList.toggle("is-open", isOpen);
+    };
+
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+      setMenuOpen(!isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target instanceof Element && event.target.closest("a")) {
+        setMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        menuButton.getAttribute("aria-expanded") === "true"
+      ) {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
     });
   }
 
   document.querySelectorAll(".faq-question").forEach((button) => {
     button.addEventListener("click", () => {
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-      const answer = document.getElementById(button.getAttribute("aria-controls"));
+      const answerId = button.getAttribute("aria-controls");
+      const answer = answerId ? document.getElementById(answerId) : null;
 
+      if (!answer) {
+        return;
+      }
+
+      const isExpanded = button.getAttribute("aria-expanded") === "true";
       button.setAttribute("aria-expanded", String(!isExpanded));
       answer.hidden = isExpanded;
-      button.querySelector(".faq-icon").textContent = isExpanded ? "+" : "−";
+
+      const icon = button.querySelector(".faq-icon");
+      if (icon) {
+        icon.textContent = isExpanded ? "+" : "−";
+      }
     });
   });
 
@@ -35,61 +64,72 @@ document.addEventListener("DOMContentLoaded", () => {
     const emptyState = document.querySelector("#no-products");
     let activeCategory = "all";
 
-    const updateProducts = () => {
-      const searchTerm = searchInput.value.trim().toLocaleLowerCase();
-      let visibleCount = 0;
+    if (searchInput && resultCount && emptyState) {
+      const updateProducts = () => {
+        const searchTerm = searchInput.value.trim().toLocaleLowerCase();
+        let visibleCount = 0;
 
-      products.forEach((product) => {
-        const matchesCategory =
-          activeCategory === "all" || product.dataset.category === activeCategory;
-        const matchesSearch = product.textContent.toLocaleLowerCase().includes(searchTerm);
-        const isVisible = matchesCategory && matchesSearch;
+        products.forEach((product) => {
+          const matchesCategory =
+            activeCategory === "all" ||
+            product.dataset.category === activeCategory;
+          const matchesSearch = product.textContent
+            .toLocaleLowerCase()
+            .includes(searchTerm);
+          const isVisible = matchesCategory && matchesSearch;
 
-        product.hidden = !isVisible;
-        if (isVisible) {
-          visibleCount += 1;
-        }
-      });
-
-      resultCount.textContent =
-        activeCategory === "all" && searchTerm === ""
-          ? `Showing all ${visibleCount} products`
-          : `Showing ${visibleCount} of ${products.length} products`;
-      emptyState.hidden = visibleCount > 0;
-    };
-
-    searchInput.addEventListener("input", updateProducts);
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        activeCategory = button.dataset.filter;
-
-        filterButtons.forEach((filterButton) => {
-          const isActive = filterButton === button;
-          filterButton.classList.toggle("active", isActive);
-          filterButton.setAttribute("aria-pressed", String(isActive));
+          product.hidden = !isVisible;
+          if (isVisible) {
+            visibleCount += 1;
+          }
         });
 
-        updateProducts();
+        resultCount.textContent =
+          activeCategory === "all" && searchTerm === ""
+            ? `Showing all ${visibleCount} products`
+            : `Showing ${visibleCount} of ${products.length} products`;
+        emptyState.hidden = visibleCount > 0;
+      };
+
+      searchInput.addEventListener("input", updateProducts);
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activeCategory = button.dataset.filter || "all";
+
+          filterButtons.forEach((filterButton) => {
+            const isActive = filterButton === button;
+            filterButton.classList.toggle("active", isActive);
+            filterButton.setAttribute("aria-pressed", String(isActive));
+          });
+
+          updateProducts();
+        });
       });
-    });
+
+      updateProducts();
+    }
   }
 
-  document.querySelectorAll("[data-demo-form], #contactForm").forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
+  document
+    .querySelectorAll("[data-demo-form], #contactForm")
+    .forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-      if (!form.reportValidity()) {
-        return;
-      }
+        if (!form.reportValidity()) {
+          return;
+        }
 
-      const message = form.querySelector(".form-message");
-      if (message) {
-        message.textContent =
-          "Thank you! Your message has been validated successfully. No details have been sent or stored.";
-      }
+        const message = form.querySelector(".form-message");
+        if (message) {
+          message.textContent =
+            form.id === "contactForm"
+              ? "Thank you! Your message has been validated for this demo. It was not sent or stored."
+              : "Thank you! Your enquiry has been validated for this demo. It was not sent or stored.";
+        }
 
-      form.reset();
+        form.reset();
+      });
     });
-  });
 });
